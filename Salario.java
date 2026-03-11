@@ -13,37 +13,39 @@ public class Salario {
     private double bSalario;
     private double nSalario; //private -> variaveis são acessiveis apenas nesta classe
     private Scanner s;
+    String nome;
+    private int perc;
     private double carteira;
     
+
     public Salario() {
         s = new Scanner(System.in);
         bSalario = 0;
         nSalario = 0;
-        carteira = 0;
+        perc = 0;
+       nome = "";
+ 
     } //inicializa os objetos = construtor
     
     
     public void entrada() {
-        System.out.println("Informa o seu salário:");
+        System.out.println("Informa o seu salário: \n");
         bSalario = s.nextDouble();
+        System.out.println("Digite o porcentual: \n");
+        perc = s.nextInt();
+        
+        s.nextLine(); //tem que colocar isso porque ele fica com um espaço na linha anterior
+        
+        nome = s.nextLine();
     }
     
     public void atualiza() {
-        nSalario = (bSalario * 0.25) + bSalario;
+        nSalario = ((bSalario * perc) / 100) + bSalario;
     }
     
     public void imprimir() {
-        System.out.printf("Novo salário: %.2f", nSalario);
-    }
-    
-    public void adicionarValor() {
-        System.out.println("Digite um valor para adicionar na carteira:");
-        double Valor = s.nextDouble();
-        carteira = carteira + Valor;
-    }
-    
-    public void imprimeCarteira() {
-        System.out.printf("Seu saldo é: %.2f", carteira);
+        System.out.printf("Novo salário: %f\n", nSalario);
+        System.out.printf("Nome: %s\n", nome);
     }
     
     
