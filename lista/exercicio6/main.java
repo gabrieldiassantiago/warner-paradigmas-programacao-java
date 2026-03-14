@@ -1,0 +1,9 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+void main() {
+    Resultado num = new Resultado();
+
+    num.entrada_valores();
+    num.calcular_pares();
+    num.imprimir_soma();
+}
